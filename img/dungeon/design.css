@@ -1,0 +1,110 @@
+body
+{
+   color: black;
+   font-size: 15px;
+}
+
+
+a:link, a:visited { text-decoration: none;border:none;}
+a:active {text-decoration: none;border:none;}
+a:hover {text-decoration: none; border:none;}
+
+
+a.tooltip em {
+    display:none;
+}
+a.tooltip:hover {
+    border: 0;
+    position: relative;
+    z-index: 500;
+    text-decoration:none;
+}
+a.tooltip:hover em {
+    font-style: normal;
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    padding: 5px;
+    color: #000;
+    border: 1px solid #bbb;
+    background: #ffc;
+    width:170px;
+}
+a.tooltip:hover em span {
+    position: absolute;
+    top: -7px;
+    left: 15px;
+    height: 7px;
+    width: 11px;
+    background: transparent url(infobulletop.gif);
+    margin:0;
+    padding: 0;
+    border: 0;
+}
+
+
+img{ text-decoration: none;border:none;}
+
+.selected {
+background-color: none;
+border-color:red;
+width: 18px;
+height: 18px;
+}
+
+.tdselect{
+border:1px;
+border-color: red;
+}
+
+.mapediteur{
+  position: absolute;
+  right:0px;
+  top:33px;
+  z-index:0;
+}
+
+.mapediteur2{
+  position: absolute;
+  right:0px;
+  top:33px;
+  z-index:1;
+}
+.mapediteur3{
+  position: absolute;
+  right:0px;
+  top:33px;
+  z-index:2;
+}
+.mapediteur4{
+  position: absolute;
+  right:0px;
+  top:33px;
+  z-index:3;
+}
+
+.mapediteur5{
+  position: absolute;
+  right:0px;
+  top:33px;
+  z-index:4;
+}
+
+.infobulle{
+    font-style: normal;
+ 
+    padding: 5px;
+    color: #F00;
+    border: 1px solid #F99;
+    background: #ffc;
+
+}
+
+div#tooltip {
+   position:absolute;
+   visibility:hidden;
+   z-index:100000;
+   font-size:0.8em;
+}
+

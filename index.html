@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+        
+        <script>
+            var RANDOMNESS = 50;
+            var SPARSENESS = 0;
+            var SIZE_X = 40;
+            var SIZE_Z =40;
+	</script>
+        
+        
+    </head>
+    <body>
+        <div style="position:absolute;width:250px;height:300px;">
+            <div id="dungeonView" style="border:1px solid #FF0000;left:100px;top:100px;"></div>
+            <div id="player" style="position:absolute;left:105px;top:105px;width:10px;height:10px;background-color:#FF0000;"></div>
+        </div>
+        
+        <div id="currentCase" style="position: fixed;right:0px;bottom:0px;z-index:50;"></div>
+        
+        
+        <div id="cube_container" style="position:fixed;bottom:0px;right:0px;">
+            <div id="cube1" class="cube">X</div>
+            <div id="cube2" class="cube">Y</div>
+            <div id="cube3" class="cube">Z</div>
+        </div>
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        
+        <script type="text/javascript" src="js/jquery2.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/accelerometer.js"></script>
+        <script type="text/javascript" src="js/dungeon.class.js"></script>
+        <script type="text/javascript">
+
+
+
+        var checkKey = function(){};
+            $(function() {
+                var donjon = new Dungeon();//INIT
+                donjon.init(SIZE_X,SIZE_Z);//SIZE
+                donjon.generate(0,0);
+                while(donjon.generateEvent(0) !==1){};//GENERATE
+                donjon.view('./img/dungeon/','dungeonView');
+  
+                app.initialize();
+                accelerometer.initialize();
+
+                document.onkeydown = checkKey;
+                $(document).on("accelerationIn", accelerationEvent); 
+                document.addEventListener("pause", onPause, false);
+                document.addEventListener("resume", onResume, false);
+
+
+                function onResume(){ alert('Resume App'); }
+                function onPause() { alert('Pause App') ; }
+
+                function checkKey(e) {
+                    var divId = '#dungeonView';
+                    var speed = 20;
+                    var pos = $(divId).position();
+                    var xDonjon = -Math.round((pos.top -105)/20);
+                    var yDonjon = -Math.round((pos.left -105)/20);
+                    var cc = donjon.map[yDonjon][xDonjon];
+                    
+                    if(xDonjon == SIZE_X-1 && yDonjon == SIZE_Y-1){alert('You Win');}
+                    
+                    if(e.keyCode == 83 && cc[2] ==1){ $(divId).css('top',-speed+pos.top+'px'); };//HAUT
+                    if(e.keyCode == 90 && cc[1] ==1){ $(divId).css('top',+speed+pos.top+'px'); };//BAS
+                    if(e.keyCode == 81 && cc[4] ==1){ $(divId).css('left',+speed+pos.left+'px'); };//DROITE
+                    if(e.keyCode == 68 && cc[3] ==1){ $(divId).css('left',-speed+pos.left+'px'); };//GAUCHE
+                }
+                function accelerationEvent(e,acceleration){
+                     if(acceleration.x > 1.5 ){ checkKey({'keyCode':81}); } // Gauche
+
+                     if(acceleration.x < -1.5){ checkKey({'keyCode':68}); } // Droite
+
+                     if(acceleration.y < -1.5){ checkKey({'keyCode':90}); } // Haut
+
+                     if(acceleration.y > 1.5 ){ checkKey({'keyCode':83}); } // Bas
+                }
+            });
+        </script>
+    </body>
+</html>

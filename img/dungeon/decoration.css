@@ -1,0 +1,232 @@
+h1{
+	color:#5d5757;
+	border : 1px solid black;
+	text-align:center;
+	background: #f1f1f1;
+}
+
+h2{
+	color:#5d5757;
+	border : none;
+	text-align:center;
+	background: none;	
+}
+
+.sep{
+	float:left;
+	margin-left:35px;
+}
+
+fieldset{
+	border:1px dotted #c0c0c0;
+}
+
+.rouge{
+	color:red;
+}
+
+.indic{
+	color:#c0c0c0;
+	font-size:10px;
+}
+
+.toto{
+	font-weight:bold;
+}
+
+.tabStats{
+	width:400px;
+	float:left;
+	margin-left:30px;
+        margin-top:20px;
+}
+
+.centre{
+	text-align:center;
+}
+
+/* Mise en forme des bulles d'aide */
+a.infobulle {
+  /* on définit le lien présent dans la balise info */
+   position: relative;
+   color: blue;
+   font-style : italic;
+   text-decoration: none;
+   cursor:help;
+}
+a.infobulle span {
+    /* on cache l'infobulle */
+   display: none;
+}
+a.infobulle:hover {
+  /* aucun arrière plan */
+   background: none;
+   /* On définit une valeur pour que l'info bulle s'affiche au dessus du texte */
+   z-index: 10;
+}
+a.infobulle:hover span {
+    /* on affiche l'infobulle en ligne */
+   display: inline;
+    /* on définit la position du block */
+   position: absolute;
+    /* on change la valeur de la propriété white-space pour qu'il n'y ait pas de retour à la ligne non-désiré */
+   white-space: nowrap;
+    /* on positionne notre infobulle */
+   top: 30px;
+   left: 20px;
+    /* couleur de l'arrière plan */
+   background-color: white;
+    /* couleur du texte */
+   color: blue;
+    /* marge interne */
+   padding: 3px;
+    /* bord de l'info bulle */
+   border: 1px solid blue;
+   border-left: 3px solid blue;
+}
+/*pour la carte*/
+a.infobulleCarte {
+  /* on définit le lien présent dans la balise info */
+   position: relative;
+   text-decoration: none;
+   cursor:pointer;
+}
+a.infobulleCarte span {
+    /* on cache l'infobulle */
+   display: none;
+}
+a.infobulleCarte:hover {
+  /* aucun arrière plan */
+   background: none;
+   /* On définit une valeur pour que l'info bulle s'affiche au dessus du texte */
+   z-index: 10;
+}
+a.infobulleCarte:hover span {
+    /* on affiche l'infobulle en ligne */
+   display: inline;
+    /* on définit la position du block */
+   position: fixed;
+    /* on change la valeur de la propriété white-space pour qu'il n'y ait pas de retour à la ligne non-désiré */
+   white-space: nowrap;
+    /* on positionne notre infobulle */
+   bottom: 20px;
+   left: 20px;
+    /* couleur de l'arrière plan */
+   background:none;
+    border:none;
+}
+
+/* Fin des propriétés des info bulles */
+
+.ancre{
+	text-decoration:none;
+	color:#3a49e2;
+}
+
+.ancre:hover{
+	color:#45e23a;
+	text-decoration:none;
+}
+
+.ancre img{
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	border:none;
+}
+/* Lien qui ce trouve sur toute les pages et qui permet d'ouvrir le popup de recherche */
+#search{
+        float:right;
+        margin:-28px 15px 0 0;
+        padding:0 0 0 ;
+        font-weight:bold;
+}
+
+#search a{
+        color:red;
+}
+
+#search a:hover{
+        color:red;
+        text-decoration:underline;
+}
+
+.textFichier, .textFichier:hover, .textFichier:focus{
+        background:#EFEFEF;
+        width:98%;
+        margin:5px 1% 5px 1%;
+        height:250px;
+        border: 1px solid black;
+}
+
+.case {
+        background-color:#48260a;
+        color:#e4b581;
+        padding:0;
+        margin:0;
+}
+
+.case td img{
+        float:left;
+}
+
+.gauche{
+        text-align:left;
+}
+
+td.vide{
+        border:none;
+        background-color:#fff;
+}
+
+.achatJoueur{
+        border:1px solid #696969;
+        border-right:3px solid #696969;
+        border-bottom:3px solid #696969;
+        width:90%;
+        margin:0 auto;
+}
+
+.divAideSaisie {
+        visibility:hidden;
+        display:none;
+        border:1px solid black;
+        position: fixed;
+        z-index:1000;
+        background : #ECECEC;
+        width:300px;
+        bottom:2px;
+        left:2px;
+}
+
+.divAideSaisie .head{
+        border:none;
+        height:16px;
+        width:100%;
+        background:#949494;
+        font-size:10px;
+        font-weight:bold;
+        color:black;
+}
+
+.divAideSaisie fieldset{
+        margin : 2px 2px 2px 2px;
+}
+
+.listBoutique{
+        width:300px;
+        border:1px solid black;
+        float : right;
+        margin: 100px 50px 20px 0;
+}
+
+.divGlobalStatsMois {
+        margin:0 auto;
+        width:890px;
+}
+
+.indic{
+        margin-top:-20px;
+        color:black;
+}
+
+.indic a:hover{ text-decoration:underline }
